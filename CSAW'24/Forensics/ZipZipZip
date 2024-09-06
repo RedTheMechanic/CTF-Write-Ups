@@ -1,0 +1,15 @@
+CTF Challenge Name: ZipZipZip
+Challenge Description: Brighten up at last with the flag.
+Files Given: challenge.zip
+
+Steps:
+1. Download challenge.zip
+2. Recursivly Unzip challenge.zip (32,795 Chunks)
+3. Cat all .txt files together
+4. Decode in CyberChef
+5. Download Image
+6. Use Stegsolve (Green Plane 5)
+
+Commands: 
+Recursive Zip: while [ "`find . -type f -name '*.zip' | wc -l`" -gt 0 ]; do find -type f -name "*.zip" -exec unzip -- '{}' \; -exec rm -- '{}' \;; done
+Put all txt files together: cat chunk_{0..10000}.txt >> all.txt 2>/dev/null
